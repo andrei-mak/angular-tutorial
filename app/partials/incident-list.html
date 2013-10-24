@@ -1,0 +1,32 @@
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span2">
+		<!--Sidebar content-->
+
+			<div>
+				Search: <input ng-model="query">
+			</div>
+		
+			<div>
+				Sort by: 
+				<select ng-model="orderProp">
+					<option value="-name">Alphabetical</option>
+					<option value="age">Newest</option>
+				</select>
+			</div>
+		
+		</div>
+	
+		<div class="span10">
+		<!--Body content-->
+		
+		<ul class="incidents">
+        <li ng-repeat="incident in incidents | filter:query | orderBy:orderProp">
+			<a href="#/incidents/{{incident.id}}">{{incident.name}}</a>
+			<p>{{incident.snippet}}</p>
+        </li>
+		</ul>
+		
+		</div>
+	</div>
+</div>
