@@ -10,6 +10,10 @@ incidentsApp.config(['$routeProvider',
 				templateUrl: 'partials/incident-list.html',
 				controller: 'IncidentListCtrl'
 			}).
+			when('/incidents/add', {
+				templateUrl: 'partials/incident-add.html',
+				controller: 'IncidentAddCtrl'
+			}).
 			when('/incidents/:incidentId', {
 				templateUrl: 'partials/incident-details.html',
 				controller: 'IncidentDetailCtrl'

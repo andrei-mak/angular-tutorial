@@ -1,5 +1,38 @@
 <div class="container-fluid">
 	<div class="row-fluid">
+		<div class="span8">
+			<!--Body content-->
+			
+			<!-- <ul class="incidents">
+			<li ng-repeat="incident in incidents | filter:query | orderBy:orderProp">
+				<a href="#/incidents/{{incident.id}}">{{incident.name}}</a>
+				<p>{{incident.snippet}}</p>
+			</li>
+			</ul>
+		
+		-->
+			<table>
+			<thead>
+			  <tr>
+				<th>Incident</th>
+				<th>Description</th>
+				<th><a href="#/incidents/add"><i class="icon-plus-sign"></i></a></th>
+			  </tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="incident in incidents | filter:query | orderBy:orderProp">
+					<td><a href="#/incidents/{{incident.id}}">{{incident.name}}</a></td>
+					<td>{{incident.snippet}}</td>
+					<td>
+					  <a href="#/incidents/{{incident.id}}"><i class="icon-pencil"></i></a>
+					</td>
+				</tr>
+			</tbody>
+			</table>
+			
+		</div>
+		
+		
 		<div class="span2">
 		<!--Sidebar content-->
 
@@ -14,18 +47,10 @@
 					<option value="age">Newest</option>
 				</select>
 			</div>
-		
-		</div>
-	
-		<div class="span10">
-		<!--Body content-->
-		
-		<ul class="incidents">
-        <li ng-repeat="incident in incidents | filter:query | orderBy:orderProp">
-			<a href="#/incidents/{{incident.id}}">{{incident.name}}</a>
-			<p>{{incident.snippet}}</p>
-        </li>
-		</ul>
+			
+			<div>
+				<a href="#/incidents/add" class="btn">Add incident</a>
+			</div>
 		
 		</div>
 	</div>

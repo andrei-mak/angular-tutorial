@@ -31,3 +31,12 @@ incidentsControllers.controller('IncidentDetailCtrl', ['$scope', '$routeParams',
 		
 	$scope.incidentId = $routeParams.incidentId;
 }]);
+
+incidentsControllers.controller('IncidentAddCtrl', ['$scope', '$http', 
+	function IncidentAddCtrl($scope, $http) {
+		$scope.save = function() {
+			/*$http.put('/save.py', $scope.incident);*/
+			console.log($scope.incident);
+		};
+	}
+]);
